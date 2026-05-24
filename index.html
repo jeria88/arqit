@@ -7,89 +7,120 @@
   <meta name="description" content="Diseñamos e implementamos sitios web claros, profesionales y preparados para representar correctamente tu trabajo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <!-- Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
   <!-- NAV -->
-  <nav class="nav">
+  <header class="nav" id="nav">
     <a href="#hero" class="nav-logo">ARQ<span>it!</span></a>
-    <ul class="nav-links">
-      <li><a href="#somos">Somos</a></li>
-      <li><a href="#planes">Planes</a></li>
-      <li><a href="#metodologia">Metodología</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    <button class="nav-toggle" aria-label="Menú">☰</button>
-  </nav>
+    <nav class="nav-links" id="nav-links">
+      <a href="#somos">Somos</a>
+      <a href="#planes">Planes</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="nav-cta" id="nav-cta">Conversemos</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+      <span></span><span></span>
+    </button>
+  </header>
 
   <!-- HERO -->
-  <section id="hero" class="section section--gold">
-    <div class="hero-content">
-      <div class="hero-top">
-        <h1 class="logo-hero">ARQ<span>it!</span></h1>
-        <p class="hero-sub mono">
+  <section id="hero" class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="hero__top reveal">
+        <p class="hero__logo">ARQ<span>it!</span></p>
+        <p class="hero__desc mono">
           <strong>Sitios web</strong> especializados para<br>
           arquitectura, ingeniería<br>y oficios creativos.
         </p>
-        <p class="mono">
-          Diseñamos e implementamos <strong>sitios web claros,<br>
-          profesionales y preparados</strong> para representar<br>
-          correctamente tu trabajo.
-        </p>
       </div>
-      <h2 class="hero-claim">Claridad<br>digital para<br>tu estudio</h2>
+      <h1 class="hero__claim">
+        <span data-depth="0.4" class="reveal">Claridad</span>
+        <span data-depth="0.55" class="reveal">digital para</span>
+        <span data-depth="0.7" class="reveal">tu estudio</span>
+      </h1>
     </div>
   </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>SITIOS WEB</span><span class="ticker__dot">·</span>
+      <span>ARQUITECTURA</span><span class="ticker__dot">·</span>
+      <span>INGENIERÍA</span><span class="ticker__dot">·</span>
+      <span>DISEÑO EDITORIAL</span><span class="ticker__dot">·</span>
+      <span>ESSENTIAL</span><span class="ticker__dot">·</span>
+      <span>SIGNATURE</span><span class="ticker__dot">·</span>
+      <span>ATELIER</span><span class="ticker__dot">·</span>
+      <span>CLARIDAD DIGITAL</span><span class="ticker__dot">·</span>
+      <span>SITIOS WEB</span><span class="ticker__dot">·</span>
+      <span>ARQUITECTURA</span><span class="ticker__dot">·</span>
+      <span>INGENIERÍA</span><span class="ticker__dot">·</span>
+      <span>DISEÑO EDITORIAL</span><span class="ticker__dot">·</span>
+      <span>ESSENTIAL</span><span class="ticker__dot">·</span>
+      <span>SIGNATURE</span><span class="ticker__dot">·</span>
+      <span>ATELIER</span><span class="ticker__dot">·</span>
+      <span>CLARIDAD DIGITAL</span><span class="ticker__dot">·</span>
+    </div>
+  </div>
 
   <!-- SOMOS / HACEMOS -->
   <section id="somos" class="section section--dark">
     <div class="container">
-      <h2 class="section-title">SOMOS.</h2>
-      <p class="mono">
-        <strong>ARQ<em>it</em></strong> es un estudio especializado en <strong>sitios web para arquitectura, ingeniería y oficios creativos.</strong>
-      </p>
-      <p class="mono">
-        Te ayudamos a presentar tus proyectos, servicios y tu experiencia de forma <strong>clara, profesional y moderna.</strong>
-      </p>
-      <p class="mono">
-        Nos enfocamos en crear <strong>sitios simples de usar, bien organizados y preparados</strong> para transmitir confianza desde el primer contacto.
-      </p>
+      <h2 class="section-title reveal">SOMOS.</h2>
+      <div class="text-block">
+        <p class="mono reveal">
+          <strong>ARQ<em>it</em></strong> es un estudio especializado en <strong>sitios web para arquitectura, ingeniería y oficios creativos.</strong>
+        </p>
+        <p class="mono reveal">
+          Te ayudamos a presentar tus proyectos, servicios y tu experiencia de forma <strong>clara, profesional y moderna.</strong>
+        </p>
+        <p class="mono reveal">
+          Nos enfocamos en crear <strong>sitios simples de usar, bien organizados y preparados</strong> para transmitir confianza desde el primer contacto.
+        </p>
+      </div>
 
-      <h2 class="section-title mt-lg">HACEMOS.</h2>
-      <p class="mono"><strong>Nos encargamos del proceso completo.</strong></p>
-      <p class="mono">
-        Muchos profesionales terminan <strong>recibiendo un sitio incompleto</strong> que requiere ordenar contenido, escribir textos, organizar proyectos y resolver aspectos técnicos <strong>por cuenta propia.</strong>
-      </p>
-      <p class="mono">En <strong>ARQ<em>it</em></strong> trabajamos distinto.</p>
-      <p class="mono">
-        Te acompañamos desde la idea inicial hasta dejar el <strong>sitio completamente habilitado y listo para funcionar.</strong>
-      </p>
-      <p class="mono">
-        Nos encargamos de: <strong>estructurar</strong> la información, <strong>organizar</strong> tus proyectos, <strong>optimizar</strong> tus visuales, y <strong>publicar</strong> todo.
-      </p>
-      <p class="mono">
-        Tú nos entregas la información. Nosotros <strong>la convertimos en un sitio web claro, funcional y profesional.</strong>
-      </p>
-      <ul class="mono list-clean">
-        <li>Sin procesos complejos.</li>
-        <li>Sin configuraciones técnicas exigentes.</li>
-        <li><strong>Sin trabajo pendiente.</strong></li>
-      </ul>
+      <h2 class="section-title mt-xl reveal">HACEMOS.</h2>
+      <div class="text-block">
+        <p class="mono reveal"><strong>Nos encargamos del proceso completo.</strong></p>
+        <p class="mono reveal">
+          Muchos profesionales terminan <strong>recibiendo un sitio incompleto</strong> que requiere ordenar contenido, escribir textos, organizar proyectos y resolver aspectos técnicos <strong>por cuenta propia.</strong>
+        </p>
+        <p class="mono reveal">En <strong>ARQ<em>it</em></strong> trabajamos distinto.</p>
+        <p class="mono reveal">
+          Te acompañamos desde la idea inicial hasta dejar el <strong>sitio completamente habilitado y listo para funcionar.</strong>
+        </p>
+        <p class="mono reveal">
+          Nos encargamos de: <strong>estructurar</strong> la información, <strong>organizar</strong> tus proyectos, <strong>optimizar</strong> tus visuales, y <strong>publicar</strong> todo.
+        </p>
+        <ul class="mono list-clean reveal">
+          <li>Sin procesos complejos.</li>
+          <li>Sin configuraciones técnicas exigentes.</li>
+          <li><strong>Sin trabajo pendiente.</strong></li>
+        </ul>
+      </div>
     </div>
-    <div class="section-logo">ARQ<span>it!</span></div>
+    <span class="section-logo" aria-hidden="true">ARQ<em>it!</em></span>
   </section>
 
   <!-- PLANES -->
   <section id="planes" class="section section--olive">
     <div class="container">
-      <h2 class="section-title">PLANES.</h2>
+      <h2 class="section-title reveal">PLANES.</h2>
 
-      <div class="plan">
-        <h3 class="plan-name">ESSENTIAL</h3>
-        <p class="mono">Para profesionales <strong>independientes o estudios</strong> pequeños que necesitan una presencia digital clara y profesional.</p>
-        <p class="mono plan-includes"><strong>Incluye:</strong></p>
+      <div class="plan reveal">
+        <span class="plan__watermark" aria-hidden="true">01</span>
+        <h3 class="plan__name">ESSENTIAL</h3>
+        <p class="mono">Para profesionales <strong>independientes o estudios pequeños</strong> que necesitan una presencia digital clara y profesional.</p>
+        <p class="mono plan__includes"><strong>Incluye:</strong></p>
         <ul class="mono list-dot">
           <li>Sitio hasta 3 secciones</li>
           <li>Diseño optimizado para computador y celular</li>
@@ -99,18 +130,19 @@
           <li>Dominio + hosting 6 meses</li>
           <li>Sitio 100% funcional</li>
         </ul>
-        <p class="mono plan-ideal">Ideal para: freelancers y oficinas en etapa inicial.</p>
-        <div class="plan-price">
-          <span class="mono plan-label">PLAN</span>
-          <span class="plan-amount">$490.000 CLP</span>
-          <span class="mono plan-iva">[IVA Incluido]</span>
+        <p class="mono plan__ideal">Ideal para: freelancers y oficinas en etapa inicial.</p>
+        <div class="plan__price">
+          <span class="mono plan__label">PLAN</span>
+          <span class="plan__amount">$490.000 CLP</span>
+          <span class="mono plan__iva">[IVA Incluido]</span>
         </div>
       </div>
 
-      <div class="plan">
-        <h3 class="plan-name">SIGNATURE</h3>
+      <div class="plan reveal">
+        <span class="plan__watermark" aria-hidden="true">02</span>
+        <h3 class="plan__name">SIGNATURE</h3>
         <p class="mono">La alternativa ideal para <strong>oficinas, constructoras o profesionales</strong> que necesitan una presentación más sólida, confiable y competitiva.</p>
-        <p class="mono plan-includes"><strong>Incluye:</strong></p>
+        <p class="mono plan__includes"><strong>Incluye:</strong></p>
         <ul class="mono list-dot">
           <li>Sitio hasta 6 secciones</li>
           <li>Diseño optimizado para computador y celular</li>
@@ -126,18 +158,19 @@
           <li>Dominio y hosting por 12 meses</li>
           <li>Sitio 100% funcional</li>
         </ul>
-        <p class="mono plan-ideal">Ideal para: Oficinas, constructoras, interioristas y marcas que necesitan una presencia digital seria y coherente.</p>
-        <div class="plan-price">
-          <span class="mono plan-label">PLAN</span>
-          <span class="plan-amount">$850.000 CLP</span>
-          <span class="mono plan-iva">[IVA Incluido]</span>
+        <p class="mono plan__ideal">Ideal para: oficinas, constructoras, interioristas y marcas que necesitan una presencia digital seria y coherente.</p>
+        <div class="plan__price">
+          <span class="mono plan__label">PLAN</span>
+          <span class="plan__amount">$850.000 CLP</span>
+          <span class="mono plan__iva">[IVA Incluido]</span>
         </div>
       </div>
 
-      <div class="plan">
-        <h3 class="plan-name">ATELIER</h3>
+      <div class="plan reveal">
+        <span class="plan__watermark" aria-hidden="true">03</span>
+        <h3 class="plan__name">ATELIER</h3>
         <p class="mono">Una solución digital personalizada para oficinas y marcas que necesitan una presencia más <strong>estratégica, editorial y alineada</strong> con su posicionamiento.</p>
-        <p class="mono plan-includes"><strong>Incluye:</strong></p>
+        <p class="mono plan__includes"><strong>Incluye:</strong></p>
         <ul class="mono list-dot">
           <li>Sitio web personalizado hasta 10 secciones</li>
           <li>Diseño optimizado para computador y celular</li>
@@ -154,130 +187,185 @@
           <li>Dominio y hosting por 12 meses</li>
           <li>Mantención de la web por 12 meses</li>
         </ul>
-        <p class="mono plan-ideal">Ideal para: Oficinas, hospitality, inmobiliarias y marcas creativas con foco en posicionamiento premium.</p>
-        <div class="plan-price">
-          <span class="mono plan-label">PLAN</span>
-          <span class="plan-amount">Desde $1.290.000 CLP</span>
-          <span class="mono plan-iva">[IVA Incluido]</span>
+        <p class="mono plan__ideal">Ideal para: oficinas, hospitality, inmobiliarias y marcas creativas con foco en posicionamiento premium.</p>
+        <div class="plan__price">
+          <span class="mono plan__label">PLAN</span>
+          <span class="plan__amount">Desde $1.290.000 CLP</span>
+          <span class="mono plan__iva">[IVA Incluido]</span>
         </div>
       </div>
 
     </div>
-    <div class="section-logo">ARQ<span>it!</span></div>
+    <span class="section-logo" aria-hidden="true">ARQ<em>it!</em></span>
   </section>
 
   <!-- METODOLOGÍA -->
   <section id="metodologia" class="section section--orange">
-    <div class="container">
-      <h2 class="section-title">METODOLOGÍA.</h2>
-      <p class="mono">Un proceso claro y acompañado de principio a fin.</p>
-
-      <ol class="metodologia-list mono">
-        <li>
-          <strong>01 · Reunión inicial</strong>
-          <p>Coordinamos una reunión online para conocer tu proyecto, entender lo que necesitas y recomendarte la mejor solución.</p>
+    <div class="metodologia__grid">
+      <div class="metodologia__left">
+        <h2 class="section-title reveal">METODOLOGÍA.</h2>
+        <p class="mono reveal">Un proceso claro y acompañado de principio a fin.</p>
+      </div>
+      <ol class="metodologia__steps">
+        <li class="metodologia__step reveal">
+          <div class="step__badge mono">01</div>
+          <div class="step__body">
+            <strong class="step__title mono">Reunión inicial</strong>
+            <p class="step__sub mono">PRIMER CONTACTO</p>
+            <p class="mono">Coordinamos una reunión online para conocer tu proyecto, entender lo que necesitas y recomendarte la mejor solución.</p>
+          </div>
         </li>
-        <li>
-          <strong>02 · Organización de contenido</strong>
-          <p>Recopilamos imágenes, textos, proyectos e información necesaria para estructurar correctamente el sitio.</p>
+        <li class="metodologia__step reveal">
+          <div class="step__badge mono">02</div>
+          <div class="step__body">
+            <strong class="step__title mono">Organización de contenido</strong>
+            <p class="step__sub mono">RECOPILACIÓN</p>
+            <p class="mono">Recopilamos imágenes, textos, proyectos e información necesaria para estructurar correctamente el sitio.</p>
+          </div>
         </li>
-        <li>
-          <strong>03 · Desarrollo y propuesta visual</strong>
-          <p>Diseñamos una primera versión navegable para que puedas revisar la estructura y funcionamiento antes de la publicación final.</p>
+        <li class="metodologia__step reveal">
+          <div class="step__badge mono">03</div>
+          <div class="step__body">
+            <strong class="step__title mono">Desarrollo y propuesta visual</strong>
+            <p class="step__sub mono">DISEÑO</p>
+            <p class="mono">Diseñamos una primera versión navegable para que puedas revisar la estructura y funcionamiento antes de la publicación final.</p>
+          </div>
         </li>
-        <li>
-          <strong>04 · Ajustes y configuración</strong>
-          <p>Realizamos mejoras finales, optimizamos el contenido y configuramos dominio, hosting y funcionamiento general del sitio.</p>
+        <li class="metodologia__step reveal">
+          <div class="step__badge mono">04</div>
+          <div class="step__body">
+            <strong class="step__title mono">Ajustes y configuración</strong>
+            <p class="step__sub mono">REFINAMIENTO</p>
+            <p class="mono">Realizamos mejoras finales, optimizamos el contenido y configuramos dominio, hosting y funcionamiento general del sitio.</p>
+          </div>
         </li>
-        <li>
-          <strong>05 · Publicación del sitio</strong>
-          <p>Dejamos el sitio completamente operativo, optimizado y preparado para funcionar correctamente en computador y celular.</p>
+        <li class="metodologia__step reveal">
+          <div class="step__badge mono">05</div>
+          <div class="step__body">
+            <strong class="step__title mono">Publicación del sitio</strong>
+            <p class="step__sub mono">LANZAMIENTO</p>
+            <p class="mono">Dejamos el sitio completamente operativo, optimizado y preparado para funcionar correctamente en computador y celular.</p>
+          </div>
         </li>
-        <li>
-          <strong>06 · Reunión de cierre</strong>
-          <p>Revisamos el sitio junto a ti y nos aseguramos de que todo esté listo para representar correctamente tu marca.</p>
+        <li class="metodologia__step reveal">
+          <div class="step__badge mono">06</div>
+          <div class="step__body">
+            <strong class="step__title mono">Reunión de cierre</strong>
+            <p class="step__sub mono">ENTREGA</p>
+            <p class="mono">Revisamos el sitio junto a ti y nos aseguramos de que todo esté listo para representar correctamente tu marca.</p>
+          </div>
         </li>
       </ol>
-
-      <p class="metodologia-claim mono">
-        Nosotros nos encargamos del proceso,<br>
-        <strong>para que tú te enfoques solo en tu trabajo.</strong>
-      </p>
     </div>
-    <div class="section-logo">ARQ<span>it!</span></div>
+    <p class="metodologia__claim reveal mono">
+      Nosotros nos encargamos del proceso,<br>
+      <strong>para que tú te enfoques solo en tu trabajo.</strong>
+    </p>
+    <span class="section-logo" aria-hidden="true">ARQ<em>it!</em></span>
   </section>
 
   <!-- COMPLEMENTOS -->
   <section id="complementos" class="section section--black">
     <div class="container">
-      <h2 class="section-title">COMPLEMENTOS.</h2>
-      <p class="mono">Además del desarrollo web, tenemos complementos orientados a <strong>mejorar la operación, comunicación y administración diaria de tu presencia digital.</strong></p>
+      <h2 class="section-title reveal">COMPLEMENTOS.</h2>
+      <p class="mono reveal">Además del desarrollo web, tenemos complementos orientados a <strong>mejorar la operación, comunicación y administración diaria de tu presencia digital.</strong></p>
 
-      <div class="complemento">
-        <h3 class="complemento-name mono">MANTENIMIENTO WEB</h3>
-        <p class="mono">Servicio de <strong>actualización y supervisión general</strong> para mantener el sitio funcionando correctamente y con información vigente.</p>
-        <ul class="mono list-dot">
-          <li>Actualización de contenidos</li>
-          <li>Revisión general de funcionamiento</li>
-          <li>Backup básico</li>
-          <li>Supervisión técnica y minuta de revisión</li>
-        </ul>
-        <p class="complemento-price mono"><strong>$200.000 CLP semestrales</strong> [IVA Incluido]</p>
+      <div class="complementos__grid">
+        <div class="complemento reveal">
+          <h3 class="complemento__name mono">MANTENIMIENTO WEB</h3>
+          <p class="mono">Servicio de <strong>actualización y supervisión general</strong> para mantener el sitio funcionando correctamente y con información vigente.</p>
+          <ul class="mono list-dot">
+            <li>Actualización de contenidos</li>
+            <li>Revisión general de funcionamiento</li>
+            <li>Backup básico</li>
+            <li>Supervisión técnica y minuta de revisión</li>
+          </ul>
+          <p class="complemento__price mono"><strong>$200.000 CLP</strong> semestrales</p>
+        </div>
+
+        <div class="complemento reveal">
+          <h3 class="complemento__name mono">CORREO CORPORATIVO</h3>
+          <p class="mono">Creación y configuración de tu <strong>correo corporativo con Google Workspace.</strong> Obtén tu mail @tumarca.com</p>
+          <ul class="mono list-dot">
+            <li>Conexión de dominio</li>
+            <li>Configuración DNS</li>
+            <li>Creación y activación de cuentas profesionales</li>
+          </ul>
+          <p class="complemento__price mono"><strong>$100.000 CLP</strong></p>
+        </div>
+
+        <div class="complemento reveal">
+          <h3 class="complemento__name mono">CALENDARIO ONLINE</h3>
+          <p class="mono">Permite que clientes puedan <strong>agendar reuniones directamente desde el sitio web.</strong></p>
+          <ul class="mono list-dot">
+            <li>Reuniones iniciales y asesorías</li>
+            <li>Coordinación de proyectos</li>
+            <li>Consultas comerciales</li>
+          </ul>
+          <p class="complemento__price mono"><strong>$70.000 CLP</strong></p>
+        </div>
+
+        <div class="complemento reveal">
+          <h3 class="complemento__name mono">FORMULARIOS DE CONTACTO</h3>
+          <p class="mono">Recepciona <strong>consultas y captura información</strong> de tus clientes desde el sitio web.</p>
+          <ul class="mono list-dot">
+            <li>Solicitudes de presupuesto</li>
+            <li>Contacto comercial</li>
+            <li>Consultas generales</li>
+          </ul>
+          <p class="complemento__price mono"><strong>$70.000 CLP</strong></p>
+        </div>
       </div>
-
-      <div class="complemento">
-        <h3 class="complemento-name mono">CORREO PROFESIONAL CORPORATIVO</h3>
-        <p class="mono">Creación y configuración de tu <strong>correo corporativo con Google Workspace.</strong> Obtén tu mail @tumarca.com</p>
-        <ul class="mono list-dot">
-          <li>Conexión de dominio</li>
-          <li>Configuración DNS</li>
-          <li>Creación y activación de cuentas profesionales</li>
-        </ul>
-        <p class="complemento-price mono"><strong>$100.000 CLP</strong> [IVA Incluido]</p>
-      </div>
-
-      <div class="complemento">
-        <h3 class="complemento-name mono">CALENDARIO DE REUNIONES ONLINE</h3>
-        <p class="mono">Permite que clientes o colaboradores puedan <strong>agendar reuniones directamente desde el sitio web.</strong></p>
-        <ul class="mono list-dot">
-          <li>Reuniones iniciales y asesorías</li>
-          <li>Coordinación de proyectos</li>
-          <li>Consultas comerciales</li>
-        </ul>
-        <p class="complemento-price mono"><strong>$70.000 CLP</strong> [IVA Incluido]</p>
-      </div>
-
-      <div class="complemento">
-        <h3 class="complemento-name mono">FORMULARIOS DE CONTACTO</h3>
-        <p class="mono">Recepciona <strong>consultas y captura información de tus clientes</strong> desde el sitio web.</p>
-        <ul class="mono list-dot">
-          <li>Solicitudes de presupuesto</li>
-          <li>Contacto comercial</li>
-          <li>Consultas generales</li>
-          <li>Captación de datos</li>
-        </ul>
-        <p class="complemento-price mono"><strong>$70.000 CLP</strong> [IVA Incluido]</p>
-      </div>
-
     </div>
-    <div class="section-logo">ARQ<span>it!</span></div>
+    <span class="section-logo" aria-hidden="true">ARQ<em>it!</em></span>
   </section>
 
   <!-- CONTACTO -->
   <section id="contacto" class="section section--gold">
     <div class="container">
-      <h2 class="section-title">CONTACTO.</h2>
-      <p class="mono">Un buen sitio web no solo mejora la presentación de tus proyectos. También transmite confianza, ordena tu información y facilita nuevas oportunidades de negocio.</p>
-      <p class="mono">En <strong>ARQ<em>it</em></strong> transformamos tu portafolio en una experiencia digital clara, profesional y simple.</p>
-      <p class="mono">Si te interesan nuestros planes, o desarrollar un sitio personalizado, contáctanos a través de nuestros canales o en una reunión online.</p>
-      <p class="mono contact-cta"><strong>Conversemos!</strong></p>
-      <ul class="mono list-dot contact-list">
+      <h2 class="section-title reveal">CONTACTO.</h2>
+      <p class="mono reveal">Un buen sitio web no solo mejora la presentación de tus proyectos. También transmite confianza, ordena tu información y facilita nuevas oportunidades de negocio.</p>
+      <p class="mono reveal">En <strong>ARQ<em>it</em></strong> transformamos tu portafolio en una experiencia digital clara, profesional y simple.</p>
+      <p class="mono reveal">Si te interesan nuestros planes, o desarrollar un sitio personalizado, contáctanos a través de nuestros canales o en una reunión online.</p>
+      <p class="contact__cta mono reveal"><strong>Conversemos.</strong></p>
+      <ul class="mono list-dot contact__list reveal">
         <li>WhatsApp: <a href="https://wa.me/56987283154">(+569) 87 28 31 54</a></li>
         <li>Correo: <a href="mailto:arqit@eead.cl">arqit@eead.cl</a></li>
       </ul>
     </div>
-    <div class="section-logo">ARQ<span>it!</span></div>
+    <span class="section-logo" aria-hidden="true">ARQ<em>it!</em></span>
   </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">ARQ<em>it!</em></span>
+        <p class="mono footer__tagline">Claridad digital para tu estudio.</p>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-label mono">SERVICIOS</span>
+        <a href="#planes" class="mono">Essential</a>
+        <a href="#planes" class="mono">Signature</a>
+        <a href="#planes" class="mono">Atelier</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-label mono">EMPRESA</span>
+        <a href="#somos" class="mono">Somos</a>
+        <a href="#metodologia" class="mono">Metodología</a>
+        <a href="#complementos" class="mono">Complementos</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-label mono">CONTACTO</span>
+        <a href="https://wa.me/56987283154" class="mono">(+569) 87 28 31 54</a>
+        <a href="mailto:arqit@eead.cl" class="mono">arqit@eead.cl</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="mono">© 2026 ARQit. Todos los derechos reservados.</span>
+      <span class="mono">Sitios web para arquitectura e ingeniería.</span>
+    </div>
+  </footer>
 
   <script src="main.js"></script>
 </body>

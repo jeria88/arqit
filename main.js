@@ -84,6 +84,8 @@
       ty = (e.clientY / window.innerHeight - 0.5) * 2;
     });
 
+    const t0 = Date.now();
+
     const tickParallax = () => {
       nbx += (tx - nbx) * bgEase;
       nby += (ty - nby) * bgEase;
@@ -91,27 +93,29 @@
       woy += (ty - woy) * wordEase;
 
       if (heroBg) {
-        const scrollFraction = Math.min(window.scrollY / window.innerHeight, 1);
-        const scale = (1.06 + scrollFraction * 0.16).toFixed(4);
-        heroBg.style.transform = `scale(${scale}) translate(${nbx * range}px, ${nby * range}px)`;
+        const t      = (Date.now() - t0) / 1000;
+        const scale  = 1.08 + Math.sin(t * 0.055) * 0.05;
+        const driftX = Math.sin(t * 0.04) * 10 + nbx * range;
+        const driftY = Math.sin(t * 0.03) *  7 + nby * range;
+        heroBg.style.transform = `scale(${scale.toFixed(4)}) translate(${driftX.toFixed(2)}px, ${driftY.toFixed(2)}px)`;
       }
 
       heroWords.forEach(el => {
         const depth = parseFloat(el.dataset.depth) || 0.5;
-        const dx = wox * depth * 18;
-        const dy = woy * depth * 10;
-        el.style.transform = `translate(${dx}px, ${dy}px)`;
+        el.style.transform = `translate(${(wox * depth * 18).toFixed(2)}px, ${(woy * depth * 10).toFixed(2)}px)`;
       });
 
-      rafParallax = requestAnimationFrame(tickParallax);
+      requestAnimationFrame(tickParallax);
     };
     tickParallax();
   }
 
-  // ── Scroll Parallax (photo sections) ──────────────────────
+  // ── Scroll Parallax + Ken Burns (photo sections) ──────────────────────
   const scrollParallaxEls = document.querySelectorAll('[data-scroll-speed]');
 
   if (scrollParallaxEls.length > 0 && !isMobile()) {
+    const t0kb = Date.now();
+
     const tickScrollParallax = () => {
       const vh = window.innerHeight;
       scrollParallaxEls.forEach(el => {
@@ -120,10 +124,11 @@
         const fromCenter = (rect.top + rect.height / 2) - vh / 2;
 
         if (el.classList.contains('photo-break__img')) {
-          // Drone zoom: zoomed in when lejos del centro, neutro al centrarse
-          const dist  = Math.abs(fromCenter) / vh;
-          const scale = (1.0 + dist * 0.36).toFixed(4);
-          el.style.transform = `scale(${scale}) translateY(${(fromCenter * speed).toFixed(2)}px)`;
+          const t      = (Date.now() - t0kb) / 1000;
+          const scale  = 1.06 + Math.sin(t * 0.06) * 0.04;
+          const driftX = Math.sin(t * 0.05) * 14;
+          const driftY = fromCenter * speed + Math.sin(t * 0.04) * 9;
+          el.style.transform = `scale(${scale.toFixed(4)}) translate(${driftX.toFixed(2)}px, ${driftY.toFixed(2)}px)`;
         } else {
           el.style.transform = `translateY(${(fromCenter * speed).toFixed(2)}px)`;
         }

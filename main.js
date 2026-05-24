@@ -106,6 +106,23 @@
     tickParallax();
   }
 
+  // ── Scroll Parallax (photo sections) ──────────────────────
+  const scrollParallaxEls = document.querySelectorAll('[data-scroll-speed]');
+
+  if (scrollParallaxEls.length > 0 && !isMobile()) {
+    const tickScrollParallax = () => {
+      scrollParallaxEls.forEach(el => {
+        const speed  = parseFloat(el.dataset.scrollSpeed) || 0.25;
+        const parent = el.parentElement;
+        const rect   = parent.getBoundingClientRect();
+        const fromCenter = (rect.top + rect.height / 2) - window.innerHeight / 2;
+        el.style.transform = `translateY(${fromCenter * speed}px)`;
+      });
+      requestAnimationFrame(tickScrollParallax);
+    };
+    tickScrollParallax();
+  }
+
   // ── Nav Scroll Behavior ────────────────────────────────────
   const nav    = document.getElementById('nav');
   const navCta = document.getElementById('nav-cta');

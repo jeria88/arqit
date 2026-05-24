@@ -91,7 +91,9 @@
       woy += (ty - woy) * wordEase;
 
       if (heroBg) {
-        heroBg.style.transform = `scale(1.06) translate(${nbx * range}px, ${nby * range}px)`;
+        const scrollFraction = Math.min(window.scrollY / window.innerHeight, 1);
+        const scale = (1.06 + scrollFraction * 0.16).toFixed(4);
+        heroBg.style.transform = `scale(${scale}) translate(${nbx * range}px, ${nby * range}px)`;
       }
 
       heroWords.forEach(el => {
@@ -111,12 +113,20 @@
 
   if (scrollParallaxEls.length > 0 && !isMobile()) {
     const tickScrollParallax = () => {
+      const vh = window.innerHeight;
       scrollParallaxEls.forEach(el => {
-        const speed  = parseFloat(el.dataset.scrollSpeed) || 0.25;
-        const parent = el.parentElement;
-        const rect   = parent.getBoundingClientRect();
-        const fromCenter = (rect.top + rect.height / 2) - window.innerHeight / 2;
-        el.style.transform = `translateY(${fromCenter * speed}px)`;
+        const speed      = parseFloat(el.dataset.scrollSpeed) || 0.25;
+        const rect       = el.parentElement.getBoundingClientRect();
+        const fromCenter = (rect.top + rect.height / 2) - vh / 2;
+
+        if (el.classList.contains('photo-break__img')) {
+          // Drone zoom: zoomed in when lejos del centro, neutro al centrarse
+          const dist  = Math.abs(fromCenter) / vh;
+          const scale = (1.0 + dist * 0.36).toFixed(4);
+          el.style.transform = `scale(${scale}) translateY(${(fromCenter * speed).toFixed(2)}px)`;
+        } else {
+          el.style.transform = `translateY(${(fromCenter * speed).toFixed(2)}px)`;
+        }
       });
       requestAnimationFrame(tickScrollParallax);
     };
